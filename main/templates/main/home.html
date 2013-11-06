@@ -1,8 +1,10 @@
 {% load staticfiles %}
+{% load compressed %}
 <!doctype html>
 <html>
   <head>
     <link rel="stylesheet" href="{% static 'main/css/style.css'%}">
+    {% compressed_css 'colors' %}
   </head>
   <body>Hello!</body>
 </html>
