@@ -42,6 +42,14 @@ INSTALLED_APPS = (
 
 STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'pipeline.finders.PipelineFinder',
+    'pipeline.finders.CachedFileFinder',
+    'pipeline.finders.FileSystemFinder',
+)
+
 PIPELINE_CSS = {
     'colors': {
         'source_filenames': (
